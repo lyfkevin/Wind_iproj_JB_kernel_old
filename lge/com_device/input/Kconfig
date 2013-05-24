@@ -212,33 +212,28 @@ choice
 	depends on LGE_TOUCHSCREEN_SYNAPTICS_RMI4_I2C
 
 config LGE_TOUCH_REG_MAP_TM1804
-	default y
 	bool "TM1804"
 	depends on LGE_TOUCHSCREEN_SYNAPTICS_RMI4_I2C && MACH_LGE_I_BOARD_VZW
 	help
          Register map TM1804. 
 
  config LGE_TOUCH_REG_MAP_TM1898
-	default y
 	bool "TM1898"
 	help
          Register map TM1898. use for cayman mpcs
          
  config LGE_TOUCH_REG_MAP_TM1992
-	default y
 	bool "TM1992"
 	help
          Register map TM1992. use for cayman vzw
 
 config LGE_TOUCH_REG_MAP_TM1814
-	default y
 	bool "TM1814"
 	depends on LGE_TOUCHSCREEN_SYNAPTICS_RMI4_I2C && (MACH_LGE_I_BOARD_SKT || MACH_LGE_I_BOARD_ATNT || MACH_LGE_IJB_BOARD_SKT)
 	help
          Register map TM1814. 
 
 config LGE_TOUCH_REG_MAP_TM1995
-	default y
 	bool "TM1995"
 	depends on LGE_TOUCHSCREEN_SYNAPTICS_RMI4_I2C  && (MACH_LGE_I_BOARD_LGU || MACH_LGE_I_BOARD_DCM ||MACH_LGE_IJB_BOARD_LGU)
 	help
