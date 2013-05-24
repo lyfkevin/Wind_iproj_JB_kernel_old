@@ -32,6 +32,7 @@ modules.builtin
 *.lzo
 *.patch
 *.gcno
+.rej
 
 #
 # Top-level generic files
@@ -45,10 +46,10 @@ modules.builtin
 /Module.markers
 /Module.symvers
 
-#
-# Debian directory (make deb-pkg)
-#
-/debian/
+#			
+49	# Debian directory (make deb-pkg)			
+50	#			
+51	/debian/
 
 #
 # git files that we don't want to ignore even it they are dot-files
@@ -83,4 +84,36 @@ GTAGS
 
 *.orig
 *~
+
+drivers/staging/ath6kl/os/linux/include/athendpack_linux.h
+drivers/staging/ath6kl/os/linux/include/athstartpack_linux.h
+Documentation/DocBook/media/v4l/controls.xml
+arch/arm/boot/compressed/ashldi3.S
+arch/arm/boot/compressed/piggy.xzkern
+mkboot/
+boot.img
+zImage
+build.sh
+changelog_*
+bfqv6/
+
+arch/arm/kernel/vmlinux.lds
+arch/arm/mach-msm/smd_rpc_sym.c
+kernel/config_data.h
+kernel/timeconst.h
+lib/crc32table.h
+lib/gen_crc32table
+scripts/
+usr/
+
+arch/arm/boot/Image
+arch/arm/boot/compressed/lib1funcs.S
+arch/arm/boot/compressed/piggy.gzip
+arch/arm/boot/compressed/vmlinux
+arch/arm/boot/compressed/vmlinux.lds
+drivers/tty/vt/consolemap_deftbl.c
+drivers/tty/vt/defkeymap.c
+drivers/staging/ath6kl/os/linux/include/athendpack_linux.h
+drivers/staging/ath6kl/os/linux/include/athstartpack_linux.h
+arch/arm/mach-msm/smd_rpc_sym.c
 \#*#
