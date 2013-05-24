@@ -151,7 +151,7 @@ static int lge_isa1200_hw_vib_on_off(struct lge_isa1200_context *context, bool o
 {
 	struct i2c_client *client = context->client;
 
-	dev_info(context->dev.dev, "%s(%d), level = %d\n", __func__, on_off, atomic_read(&(context->vibe_level)));
+	//dev_info(context->dev.dev, "%s(%d), level = %d\n", __func__, on_off, atomic_read(&(context->vibe_level)));
 
 #if defined(CONFIG_MACH_LGE_325_BOARD_LGU) || defined(CONFIG_MACH_LGE_325_BOARD_VZW)
 	if (atomic_read(&(context->vibe_level)) <= 0) {

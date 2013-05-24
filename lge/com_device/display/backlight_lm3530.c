@@ -208,7 +208,7 @@ static void lm3530_set_main_current_level(struct i2c_client *client, int level)
 #endif
 
 		lm3530_write_reg(client, 0xA0, cal_value);
-		printk ("................... level=%d,cal_value=%d\n",level,cal_value);
+		//printk ("................... level=%d,cal_value=%d\n",level,cal_value);
 	}
 	else{
 

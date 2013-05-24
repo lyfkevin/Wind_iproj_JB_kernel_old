@@ -16,10 +16,12 @@
 
 #define pr_fmt(fmt)	"%s: " fmt, __func__
 
+/*
 #ifndef CONFIG_LGE_PM_BATTERY_ALARM
 #undef CONFIG_LGE_PM_BATTERY_ALARM
 #define LGE_DEBUG
 #endif
+*/
 
 #include <linux/err.h>
 #include <linux/interrupt.h>

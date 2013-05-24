@@ -47,7 +47,7 @@
 #define MAX17040_BATTERY_FULL	95
 
 /*                     */
-#define LGE_DEBUG_FINAL
+/* #define LGE_DEBUG_FINAL*/
 
 #if defined(CONFIG_MACH_LGE_325_BOARD_SKT) || defined(CONFIG_MACH_LGE_325_BOARD_LGU)
 #define INSTANT_POWER_ON_AT_LOW_BATTERY
