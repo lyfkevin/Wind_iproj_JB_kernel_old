@@ -108,7 +108,7 @@ static void kp_bl_set(struct pmic8058_led_data *led, enum led_brightness value)
 			return;
 		}
 	}
-	printk("[Touch key backlight] %s value : %d\n", __FUNCTION__, value);
+	//printk("[Touch key backlight] %s value : %d\n", __FUNCTION__, value);
 	//                                                                                      
 #endif /* =================================================================================== */
 

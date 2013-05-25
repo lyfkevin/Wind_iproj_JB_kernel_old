@@ -2522,7 +2522,7 @@ static int pm8058_get_battery_temperature_adc(void)
 
 	mv_reading = 0;
 	batt_read_adc(CHANNEL_ADC_BATT_THERM, &mv_reading);
-	pr_err("%s: therm_raw is %d\n", __func__, mv_reading);
+	//pr_err("%s: therm_raw is %d\n", __func__, mv_reading);
 	return mv_reading;
 }
 #endif

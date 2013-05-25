@@ -477,10 +477,12 @@ static irqreturn_t tsens_isr_thread(int irq, void *data)
 				schedule_work(&tm->work);
 				adc_code = readl(TSENS_S0_STATUS_ADDR
 							+ (i << 2));
+/*(
 				printk(KERN_INFO"\nTrip point triggered by "
 					"current temperature (%d degrees) "
 					"measured by Temperature-Sensor %d\n",
 					tsens_tz_code_to_degC(adc_code), i);
+*/
 			}
 		}
 		sensor >>= 1;
