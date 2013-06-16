@@ -16,7 +16,7 @@
 
 #include <userDataBackUpDiag.h>
 #include <userDataBackUpTypeDef.h> 
-#include <../../kernel/arch/arm/mach-msm/smd_private.h>
+#include <../../arch/arm/mach-msm/smd_private.h>
 #include <linux/slab.h>
 
 #include <board_lge.h>
@@ -2131,7 +2131,7 @@ PACK (void *)LGE_Dload_SRD (PACK (void *)req_pkt_ptr, uint16 pkg_len)
             break;
 
         case USERDATA_BACKUP_REQUEST:
-            remote_rpc_srd_cmmand(req_ptr, rsp_ptr);  //userDataBackUpStart() ?¬ê¸°??... shared ram ?€???˜ë„ë¡? .. 
+            remote_rpc_srd_cmmand(req_ptr, rsp_ptr);  //userDataBackUpStart() ?\ACê¸°??... shared ram ?\80???\98ë„\EB\A1? .. 
             diag_userDataBackUp_entrySet(req_ptr,rsp_ptr,0);  //write info data ,  after rpc respons include write_sector_counter  
 
             //todo ..  rsp_prt->header.write_sector_counter,  how about checking  no active nv item  ; 
@@ -2189,8 +2189,8 @@ PACK (void *)LGE_Dload_SRD (PACK (void *)req_pkt_ptr, uint16 pkg_len)
             }
             load_srd_shard_base+=1200*256 ; //mdm ram offset
 
-            remote_rpc_srd_cmmand(req_ptr, rsp_ptr); //userDataBackUpStart() ?¬ê¸°??... ram ?€???˜ë„ë¡? .. 
-            diag_userDataBackUp_entrySet(req_ptr,rsp_ptr,1); //write info data ,  after rpc respons include write_sector_counter  remote_rpc_srd_cmmand(req_ptr, rsp_ptr);  //userDataBackUpStart() ?¬ê¸°??... ram ?€???˜ë„ë¡? .. 
+            remote_rpc_srd_cmmand(req_ptr, rsp_ptr); //userDataBackUpStart() ?\ACê¸°??... ram ?\80???\98ë„\EB\A1? .. 
+            diag_userDataBackUp_entrySet(req_ptr,rsp_ptr,1); //write info data ,  after rpc respons include write_sector_counter  remote_rpc_srd_cmmand(req_ptr, rsp_ptr);  //userDataBackUpStart() ?\ACê¸°??... ram ?\80???\98ë„\EB\A1? .. 
             write_size= rsp_ptr->rsp_data.write_sector_counter *256; //return nv backup counters  
 
             if( write_size >0x15000)  //384K = mode ram (300K) + mdm (80K)
