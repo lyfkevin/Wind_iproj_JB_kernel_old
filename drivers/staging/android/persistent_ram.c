@@ -475,3 +475,4 @@ int __init persistent_ram_early_init(struct persistent_ram *ram)
 
 	return 0;
 }
+
