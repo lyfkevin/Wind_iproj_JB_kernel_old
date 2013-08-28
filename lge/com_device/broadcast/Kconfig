@@ -1,0 +1,22 @@
+#
+# Broadcast Device Driver Support
+#
+
+menu "BROADCAST_DEVICE"
+
+config LGE_BROADCAST_DCM
+	bool "LGE broacast device"
+	default n
+	depends on MACH_LGE_325_BOARD_DCM
+	help
+	  Select this if you want to use broadcast service
+
+#for tag - added by mo2chunghan.lee@lge.com, 11/13/2012 ===
+config LGE_BROADCAST_ONESEG
+    bool "LGE broacast device"
+    default n
+    help
+      Select this if you want to use broadcast service
+#==========================================================
+	  
+endmenu

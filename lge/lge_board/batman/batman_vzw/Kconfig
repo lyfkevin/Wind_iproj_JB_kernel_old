@@ -1,0 +1,127 @@
+menu "LGE batman vzw board config"
+
+config TEMP_VZW_CONFIG
+	boolean "TEMP Config for Batman Verzion"
+	default n
+	---help---
+		Temp config for bring up Batman verizon
+
+### "Kernel"
+### BATMAN_VZW_KERNEL_xxx
+
+config BATMAN_VZW_KERNEL_GPIO
+	boolean "Support batman VZW GPIO"
+	default n
+	---help---
+		LGE GPIO Config for BATMAN for VZW
+
+config BATMAN_VZW_KERNEL_BOARD_REV
+	boolean "Support batman VZW PMIC MPP"
+	default n
+	---help---
+		LGE PMIC MPP Config for BATMAN for VZW
+### "Power"
+### BATMAN_VZW_KERNEL_xxx
+config BATMAN_VZW_HALLIC
+	boolean "Support batman VZW Hall IC"
+	default n
+	---help---
+		LGE Hall IC Config for BATMAN for VZW
+
+config BATMAN_VZW_FUEL_GAUGE
+	boolean "Support batman VZW Fuel Gauge"
+	default n
+	---help---
+		LGE Fuel Gauge Config for BATMAN for VZW
+
+config BATMAN_VZW_POWER_BATT_THRM_SCENARIO
+	boolean "Support batman VZW Battery Thermistor Scenario"
+	default n
+	---help---
+		LGE Battery Thermistor Config for BATMAN for VZW
+
+config BATMAN_VZW_POWER_BATT_CHARGER
+	boolean "Support batman VZW Battery Charging"
+	default n
+	---help---
+		LGE Battery Charging Config for Batman for VZW
+
+### "Display"
+### BATMAN_VZW_DISPLAY_xxx
+
+### "MHL"
+### BATMAN_VZW_MHL_xxx
+
+### "AUDIO"
+### BATMAN_VZW_AUDIO_xxx
+
+### "INPUT"
+### BATMAN_VZW_INPUT_xxx
+
+### "SENSOR"
+### BATMAN_VZW_SENSOR_xxx
+config BATMAN_VZW_SENSOR_ACCEL
+	boolean "Support batman VZW Accelerometer Sensor"
+	default n
+	---help---
+		LGE Accelerometer Sensor Config for BATMAN for VZW
+		
+config BATMAN_VZW_SENSOR_COMPASS
+	boolean "Support batman VZW Compass Sensor"
+	default n
+	---help---
+		LGE Compass Sensor Config for BATMAN for VZW
+
+config BATMAN_VZW_SENSOR_GYRO
+	boolean "Support batman VZW Gyro Sensor"
+	default n
+	---help---
+		LGE Gyro Sensor Config for BATMAN for VZW
+
+config BATMAN_VZW_SENSOR_LIGHT
+	boolean "Support batman VZW Light Sensor"
+	default n
+	---help---
+		LGE Light Sensor Config for BATMAN for VZW
+
+config BATMAN_VZW_SENSOR_PROXIMITY
+	boolean "Support batman VZW Proximity Sensor"
+	default n
+	---help---
+		LGE Proximity Sensor Config for BATMAN for VZW
+config LGE_LOG_SERVICE
+    bool "Support LGE log service"
+    default n
+    ---help---
+        Support LGE log service. The author of this patch is cs77.ha@lge.com
+
+config BATMAN_VZW_POWER_ON_OFF
+    bool "Support batman VZW Power On/Off"
+    default n
+    ---help---
+		LGE Power On/Off Test Ofr Batman VZW
+
+config BATMAN_VZW_XO_VOTER_FOR_EVDO
+	default n
+    bool "LGE_XO_VOTER_FOR_EVDO"
+    ---help---
+        LGE_PM_IGNORE_BATT_THERM_FOR_EVENTS
+
+### "USB"
+### BATMAN_VZW_USB_xxx
+
+### "MODEM"
+### BATMAN_VZW_MODEM_xxx
+
+### "DOWNLOAD"
+### BATMAN_VZW_DOWNLOAD_xxx
+
+### "MAIN_CAMERA"
+### BATMAN_VZW_MAIN_CAMERA_xxx
+
+### "VT_CAMERA"
+### BATMAN_VZW_VT_CAMERA_xxx
+
+### "FOTA_UA"
+### BATMAN_VZW_FOTA_UA_xxx
+endmenu
