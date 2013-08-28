@@ -518,8 +518,8 @@ static struct regulator_init_data saw_s0_init_data = {
 		.constraints = {
 			.name = "8901_s0",
 			.valid_ops_mask = REGULATOR_CHANGE_VOLTAGE,
-			.min_uV = 800000,
-			.max_uV = 1325000,
+			.min_uV = 700000,
+			.max_uV = 1400000,
 		},
 		.consumer_supplies = vreg_consumers_8901_S0,
 		.num_consumer_supplies = ARRAY_SIZE(vreg_consumers_8901_S0),
@@ -529,8 +529,8 @@ static struct regulator_init_data saw_s1_init_data = {
 		.constraints = {
 			.name = "8901_s1",
 			.valid_ops_mask = REGULATOR_CHANGE_VOLTAGE,
-			.min_uV = 800000,
-			.max_uV = 1325000,
+			.min_uV = 700000,
+			.max_uV = 1400000,
 		},
 		.consumer_supplies = vreg_consumers_8901_S1,
 		.num_consumer_supplies = ARRAY_SIZE(vreg_consumers_8901_S1),
@@ -807,13 +807,13 @@ static struct msm_rpmrs_platform_data msm_rpmrs_data __initdata = {
 		[MSM_RPMRS_VDD_MEM_RET_LOW]     = 500,
 		[MSM_RPMRS_VDD_MEM_RET_HIGH]    = 750,
 		[MSM_RPMRS_VDD_MEM_ACTIVE]      = 1000,
-		[MSM_RPMRS_VDD_MEM_MAX]         = 1325,
+		[MSM_RPMRS_VDD_MEM_MAX]         = 1400,
 	},
 	.vdd_dig_levels = {
 		[MSM_RPMRS_VDD_DIG_RET_LOW]     = 500,
 		[MSM_RPMRS_VDD_DIG_RET_HIGH]    = 750,
 		[MSM_RPMRS_VDD_DIG_ACTIVE]      = 1000,
-		[MSM_RPMRS_VDD_DIG_MAX]         = 1250,
+		[MSM_RPMRS_VDD_DIG_MAX]         = 1400,
 	},
 	.vdd_mask = 0xFFF,
 	.rpmrs_target_id = {
@@ -2522,8 +2522,8 @@ static struct regulator_consumer_supply vreg_consumers_PM8901_S4_PC[] = {
 /* RPM early regulator constraints */
 static struct rpm_regulator_init_data rpm_regulator_early_init_data[] = {
 	/*	 ID       a_on pd ss min_uV   max_uV   init_ip    freq */
-	RPM_SMPS(PM8058_S0, 0, 1, 1,  500000, 1325000, SMPS_HMIN, 1p60),
-	RPM_SMPS(PM8058_S1, 0, 1, 1,  500000, 1250000, SMPS_HMIN, 1p60),
+	RPM_SMPS(PM8058_S0, 0, 1, 1,  500000, 1400000, SMPS_HMIN, 1p60),
+	RPM_SMPS(PM8058_S1, 0, 1, 1,  500000, 1400000, SMPS_HMIN, 1p60),
 };
 
 /* RPM regulator constraints */
