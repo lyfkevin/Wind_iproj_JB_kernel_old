@@ -813,7 +813,7 @@ static struct msm_rpmrs_platform_data msm_rpmrs_data __initdata = {
 		[MSM_RPMRS_VDD_DIG_RET_LOW]     = 500,
 		[MSM_RPMRS_VDD_DIG_RET_HIGH]    = 750,
 		[MSM_RPMRS_VDD_DIG_ACTIVE]      = 1000,
-		[MSM_RPMRS_VDD_DIG_MAX]         = 1400,
+		[MSM_RPMRS_VDD_DIG_MAX]         = 1250,
 	},
 	.vdd_mask = 0xFFF,
 	.rpmrs_target_id = {
@@ -2523,7 +2523,7 @@ static struct regulator_consumer_supply vreg_consumers_PM8901_S4_PC[] = {
 static struct rpm_regulator_init_data rpm_regulator_early_init_data[] = {
 	/*	 ID       a_on pd ss min_uV   max_uV   init_ip    freq */
 	RPM_SMPS(PM8058_S0, 0, 1, 1,  500000, 1400000, SMPS_HMIN, 1p60),
-	RPM_SMPS(PM8058_S1, 0, 1, 1,  500000, 1400000, SMPS_HMIN, 1p60),
+	RPM_SMPS(PM8058_S1, 0, 1, 1,  500000, 1250000, SMPS_HMIN, 1p60),
 };
 
 /* RPM regulator constraints */
