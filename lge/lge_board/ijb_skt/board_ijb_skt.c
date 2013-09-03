@@ -1613,7 +1613,7 @@ unsigned char hdmi_is_primary;
 #define USER_SMI_SIZE         (MSM_SMI_SIZE - KERNEL_SMI_SIZE)
 #define MSM_PMEM_SMIPOOL_SIZE USER_SMI_SIZE
 
-#define MSM_ION_SF_SIZE		0x4000000 /* 64MB */
+#define MSM_ION_SF_SIZE		0x2C00000 /* 64MB */
 #define MSM_ION_CAMERA_SIZE     MSM_PMEM_ADSP_SIZE
 #define MSM_ION_MM_FW_SIZE	0x200000 /* (2MB) */
 #define MSM_ION_MM_SIZE		0x3600000 /* (54MB) */
