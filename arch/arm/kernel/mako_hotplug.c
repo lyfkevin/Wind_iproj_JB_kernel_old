@@ -26,15 +26,15 @@
  
 #include <mach/cpufreq.h>
 
-#define DEFAULT_FIRST_LEVEL 50
-#define DEFAULT_SUSPEND_FREQ 702000
+#define DEFAULT_FIRST_LEVEL 55
+#define DEFAULT_SUSPEND_FREQ 540000
 #define HIGH_LOAD_COUNTER 20
 #define TIMER HZ
 
 /*
  * 1000ms = 1 second
  */
-#define MIN_TIME_CPU_ONLINE_MS 1500
+#define MIN_TIME_CPU_ONLINE_MS 1200
 
 struct cpu_stats
 {
