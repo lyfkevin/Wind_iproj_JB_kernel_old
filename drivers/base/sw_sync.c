@@ -71,6 +71,23 @@ static int sw_sync_pt_compare(struct sync_pt *a, struct sync_pt *b)
 	return sw_sync_cmp(pt_a->value, pt_b->value);
 }
 
+static void sw_sync_print_obj(struct seq_file *s,
+			      struct sync_timeline *sync_timeline)
+{
+	struct sw_sync_timeline *obj = (struct sw_sync_timeline *)sync_timeline;
+
+	seq_printf(s, "%d", obj->value);
+}
+
+static void sw_sync_print_pt(struct seq_file *s, struct sync_pt *sync_pt)
+{
+	struct sw_sync_pt *pt = (struct sw_sync_pt *)sync_pt;
+	struct sw_sync_timeline *obj =
+		(struct sw_sync_timeline *)sync_pt->parent;
+
+	seq_printf(s, "%d / %d", pt->value, obj->value);
+}
+
 static int sw_sync_fill_driver_data(struct sync_pt *sync_pt,
 				    void *data, int size)
 {
@@ -84,29 +101,14 @@ static int sw_sync_fill_driver_data(struct sync_pt *sync_pt,
 	return sizeof(pt->value);
 }
 
-static void sw_sync_timeline_value_str(struct sync_timeline *sync_timeline,
-				       char *str, int size)
-{
-	struct sw_sync_timeline *timeline =
-		(struct sw_sync_timeline *)sync_timeline;
-	snprintf(str, size, "%d", timeline->value);
-}
-
-static void sw_sync_pt_value_str(struct sync_pt *sync_pt,
-				       char *str, int size)
-{
-	struct sw_sync_pt *pt = (struct sw_sync_pt *)sync_pt;
-	snprintf(str, size, "%d", pt->value);
-}
-
 struct sync_timeline_ops sw_sync_timeline_ops = {
 	.driver_name = "sw_sync",
 	.dup = sw_sync_pt_dup,
 	.has_signaled = sw_sync_pt_has_signaled,
 	.compare = sw_sync_pt_compare,
+	.print_obj = sw_sync_print_obj,
+	.print_pt = sw_sync_print_pt,
 	.fill_driver_data = sw_sync_fill_driver_data,
-	.timeline_value_str = sw_sync_timeline_value_str,
-	.pt_value_str = sw_sync_pt_value_str,
 };
 
 
@@ -130,7 +132,12 @@ void sw_sync_timeline_inc(struct sw_sync_timeline *obj, u32 inc)
 EXPORT_SYMBOL(sw_sync_timeline_inc);
 
 #ifdef CONFIG_SW_SYNC_USER
+/* *WARNING*
+ *
+ * improper use of this can result in deadlocking kernel drivers from userspace.
+ */
 
+/* opening sw_sync create a new sync obj */
 int sw_sync_open(struct inode *inode, struct file *file)
 {
 	struct sw_sync_timeline *obj;
@@ -249,4 +256,4 @@ void __exit sw_sync_device_remove(void)
 module_init(sw_sync_device_init);
 module_exit(sw_sync_device_remove);
 
-#endif 
+#endif /* CONFIG_SW_SYNC_USER */
