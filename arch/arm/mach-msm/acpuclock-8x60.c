@@ -184,6 +184,9 @@ static struct clkctl_l2_speed l2_freq_tbl_v2[] = {
 	[8]  = {1188000,  1, 0x16, 1200000, 1200000, 3},
 	[9]  = {1296000,  1, 0x18, 1200000, 1225000, 3},
 	[10] = {1404000,  1, 0x1A, 1200000, 1250000, 3},
+	[11] = {1512000,  1, 0x1C, 1200000, 1250000, 3},
+	[12] = {1620000,  1, 0x1E, 1225000, 1275000, 4},
+	[13] = {1728000,  1, 0x20, 1225000, 1275000, 4},
 };
 
 #define L2(x) (&l2_freq_tbl_v2[(x)])
@@ -202,7 +205,9 @@ static struct clkctl_acpu_speed acpu_freq_tbl_oc[] = {
   { {1, 1}, 1188000,  ACPU_SCPLL, 0, 0, 1, 0x16, L2(8),   975000, 0x03006000},
   { {1, 1}, 1296000,  ACPU_SCPLL, 0, 0, 1, 0x18, L2(9),  1025000, 0x03006000},
   { {1, 1}, 1404000,  ACPU_SCPLL, 0, 0, 1, 0x1A, L2(10), 1075000, 0x03006000},
-  { {1, 1}, 1512000,  ACPU_SCPLL, 0, 0, 1, 0x1C, L2(10), 1100000, 0x03006000},
+  { {1, 1}, 1512000,  ACPU_SCPLL, 0, 0, 1, 0x1C, L2(11), 1100000, 0x03006000},
+  { {1, 1}, 1620000,  ACPU_SCPLL, 0, 0, 1, 0x1E, L2(12), 1150000, 0x03006000},
+  { {1, 1}, 1728000,  ACPU_SCPLL, 0, 0, 1, 0x20, L2(13), 1200000, 0x03006000},
   { {0, 0}, 0 },
 };
 
@@ -803,7 +808,7 @@ static __init struct clkctl_acpu_speed *select_freq_plan(void)
 	uint32_t max_khz;
 	struct clkctl_acpu_speed *f;
 
-	max_khz = 1512000;
+	max_khz = 1728000;
 	acpu_freq_tbl = acpu_freq_tbl_oc;
 
 	/* Truncate the table based to max_khz. */
